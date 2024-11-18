@@ -1,3 +1,5 @@
 # Build
 
 node_modules/
+.DS_Store
+*.tgz

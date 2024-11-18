@@ -50,7 +50,7 @@ export async function proxyByWCR(request: Request & { nextUrl: { pathname: strin
     } else if (nextPath === '/api/wp-json') {
       backendRoute = nextPath.replace(/^\/api\/wp\-json\/(.*)/, `${process.env.wcr_wp_homeurl}/wp-json/$1`);
     } else {
-      backendRoute = `${process.env.wcr_wp_homeurl}/wp-admin/admin-ajax.php?${params.toString()}`;
+      backendRoute = `${process.env.wcr_wp_siteurl}/wp-admin/admin-ajax.php?${params.toString()}`;
     }
     headers.set('x-middleware-rewrite', backendRoute);
 

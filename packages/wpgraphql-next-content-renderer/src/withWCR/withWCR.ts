@@ -35,7 +35,7 @@ export function withWCR(config: NextConfig, wpConfig: WPConfig & Partial<Optiona
       wcr_frontend_url: `${frontendProtocol}://${frontendDomain}`,
     },
     redirects: async () => {
-      const wordpressContentRenderRewrites =  [
+      const wordpressContentRenderRedirects =  [
         {
           source: '/',
           has: [
@@ -65,17 +65,13 @@ export function withWCR(config: NextConfig, wpConfig: WPConfig & Partial<Optiona
         },
       ];
 
-      const redirects = await config.rewrites?.()
+      const redirects = await config.redirects?.()
       if (!redirects) {
-        return wordpressContentRenderRewrites;
+        return wordpressContentRenderRedirects;
       } else if (Array.isArray(redirects)) {
-        return redirects.concat(wordpressContentRenderRewrites)
-      } else if (redirects.afterFiles) {
-        redirects.afterFiles = redirects.afterFiles.concat(wordpressContentRenderRewrites)
-        return redirects;
+        return redirects.concat(wordpressContentRenderRedirects)
       } else {
-        redirects.afterFiles = wordpressContentRenderRewrites
-        return redirects;
+        throw new Error("Invalid return type for NextJS configuration redirects callback");
       }
     }
   };
