@@ -1,0 +1,13 @@
+{
+    "name": "axistaylor/nextpress",
+    "description": "WPGraphQL extension. Adds the queries needed to render WP content on a 1:1 scale in a headless environment.",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Geoff Taylor",
+            "email": "geoff@axistaylor.com"
+        }
+    ],
+    "require": {}
+}

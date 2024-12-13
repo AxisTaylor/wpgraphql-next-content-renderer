@@ -1,6 +1,6 @@
 {
-  "name": "@axistaylor/wpgraphql-next-content-renderer",
-  "version": "0.0.1",
+  "name": "nextpress",
+  "version": "0.0.2-0",
   "description": "Provides components and tooling to render WordPress page content on a 1:1 scale",
   "publishConfig": {
     "access": "public"
